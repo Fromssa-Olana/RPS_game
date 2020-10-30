@@ -16,15 +16,14 @@ public class Game {
         int playerResponse = 0;
 
         // The response needs to be an integer between 1-3 (1 = Rock, 2 = Paper, 3 = Scissors)
-        boolean again = false;
+        boolean again;
         do {
-
+            again = false;
             System.out.println("Please enter an integer number between 1-3 (1 = Rock, 2 = Paper, 3 = Scissors) ");
             playerResponse = scanner.nextInt();
-            if (playerResponse > 0 && playerResponse < 4) {
-                continue;
-            } else {
+            if (!(playerResponse > 0 && playerResponse < 4)) {
                 again = true;
+                scanner.reset();
             }
         } while (again);
 
